@@ -13,7 +13,7 @@ namespace Gallery.Menus
         [SerializeField] private Menu _loadMenu;
 
 
-        private IDownloader _managerScene;
+        private DownLoadDataManager _managerScene;
         private ProgressBar _progress;
 
 

@@ -2,7 +2,7 @@ using System.Collections;
 
 namespace Gallery.Menus
 {
-    public abstract class DownLoadDataManager: IDownloader
+    public abstract class DownLoadDataManager
     {
         protected ProgressBar _progressBar;
 
@@ -10,9 +10,6 @@ namespace Gallery.Menus
         {
             _progressBar = progressBar;
         }
-        public virtual IEnumerator DownLoadData(int id)
-        {
-            yield return null;
-        }
+        public abstract IEnumerator DownLoadData(int id);
     }
 }
