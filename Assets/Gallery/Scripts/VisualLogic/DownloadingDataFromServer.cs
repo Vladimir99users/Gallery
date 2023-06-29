@@ -3,18 +3,6 @@ using UnityEngine;
 using UnityEngine.Networking;
 public class DownloadingDataFromServer : DownloadData
 {
-    public override void InitEventData()
-    {
-        _onError += ErrorDataView;
-        _onSucces += SuccesDataView;
-    }
-
-    public override void UnInitEventData()
-    {
-        _onError -= ErrorDataView;
-        _onSucces -= SuccesDataView;
-    }
-
     public override IEnumerator DownLoadData(string path)
     {
         using(UnityWebRequest unityWebRequest = UnityWebRequestTexture.GetTexture(path))
@@ -30,22 +18,24 @@ public class DownloadingDataFromServer : DownloadData
            if(unityWebRequest.result == UnityWebRequest.Result.ConnectionError || 
               unityWebRequest.result == UnityWebRequest.Result.DataProcessingError)
             {
-               _onError?.Invoke(unityWebRequest.error);
+               ErrorDataView(unityWebRequest.error);
             } else 
             {
                DownloadHandlerTexture dHTexture = unityWebRequest.downloadHandler as DownloadHandlerTexture;
-               _onSucces?.Invoke(dHTexture.texture);
+               SuccesDataView(dHTexture.texture);
             }
        }
     }
     protected override void ErrorDataView(string error)
     {
         _downloadDataProgress.SetError(error);
+        OnError?.Invoke(error);
     }
 
     protected override void SuccesDataView(Texture2D data)
     {
         _dataDisplay.GenerateSpriteAndSetSpriteInImage(data);
+        OnSucces?.Invoke();
     }
 }
 

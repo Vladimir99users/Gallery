@@ -18,7 +18,7 @@ public class TestDownloadData : MonoBehaviour
 
     private void GetTexture()
     {
-        string url = URLConfigurate.URL;
+        string url = URLConfigurate.URLTest;
 
         Action<string> onError = (string data) => 
         {

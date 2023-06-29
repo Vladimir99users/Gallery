@@ -1,26 +1,26 @@
 using UnityEngine;
 using System.Collections;
-using System;
+using UnityEngine.Events;
 
 
-public abstract class DownloadData : MonoBehaviour, IDownloader
+public abstract class DownloadData : IDownloader
 {
-    protected Action<string> _onError;
-    protected Action<Texture2D> _onSucces;
+    public UnityAction<string> OnError;
+    public UnityAction OnSucces;
 
     protected DisplayData _dataDisplay;
     protected ProgressDownloadData _downloadDataProgress;
 
-    public void SetDysplay(DisplayData dataDisplay,ProgressDownloadData dataProgress)
+    public void SetDisplayAndProgressData(DisplayData dataDisplay,ProgressDownloadData dataProgress)
     {
         _dataDisplay = dataDisplay;
         _downloadDataProgress = dataProgress;
+
+        OnSucces += _downloadDataProgress.LoadIsSucces;
     }
 
     public abstract IEnumerator DownLoadData(string path);
 
-    public abstract void InitEventData();
-    public abstract void UnInitEventData();
     protected abstract void ErrorDataView(string error);
     protected abstract void SuccesDataView(Texture2D data);
 

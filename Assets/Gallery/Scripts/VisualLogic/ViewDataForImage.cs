@@ -11,6 +11,7 @@ public class ViewDataForImage : DisplayData
     
     public override void GenerateSpriteAndSetSpriteInImage(Texture2D data)
     {
+        Debug.Log("Set Data GenerateSpriteAndSetSpriteInImage");
         Sprite sprite = Sprite.Create(data, new Rect(0,0,data.width,data.height),new Vector2(0.5f,0.5f));
         SetDataImage(sprite);
     }
@@ -20,22 +21,3 @@ public class ViewDataForImage : DisplayData
         _viewImage.sprite = newImage;
     }
 }
-
-
-/*
-
-
-     //protected abstract void SetDataInText(float newValue);
-    //protected abstract void SetDataProgressBar(float newValue);
-
-    //protected override void SetDataInText(float newValue)
-    //{
-    //    _textProgressData.text = $"Load: {(newValue).ToString("N0")}%";
-    //}
-//
-    //protected override void SetDataProgressBar(float newValue)
-    //{
-    //    _progressBar.fillAmount = newValue;
-    //}
-
-*/
