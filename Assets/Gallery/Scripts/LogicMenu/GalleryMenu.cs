@@ -8,7 +8,6 @@ namespace Gallery.Menus
     public class GalleryMenu : Menu
     {
         [Header("UI interface")]
-        [SerializeField] private Button _loadNewScene;
         [SerializeField] private Slider _sliderProgressBar;
         [SerializeField] private Menu _loadMenu;
 
@@ -21,23 +20,13 @@ namespace Gallery.Menus
         {
             _progress = new ProgressLoadMenu(_sliderProgressBar);
            _managerScene = new ManagmentScene(_progress);
-
-
-           _loadNewScene.onClick.AddListener( ButtonClick);
         }
-
-        private void OnDisable() 
+        public override void LoadScene(int id)
         {
-            _loadNewScene.onClick.RemoveAllListeners();    
-        }
-
-
-        protected override void ButtonClick()
-        {
-            base.ButtonClick();
+            base.LoadScene(id);
             
             _loadMenu.Open();
-            StartCoroutine(_managerScene.DownLoadData(3));
+            StartCoroutine(_managerScene.DownLoadData(id));
         }
 
     }

@@ -8,6 +8,7 @@ public class GenerateObject : MonoBehaviour
 
     [Space]
     [SerializeField] private int _countObject = 66;
+    [SerializeField] private SaveSelectedImageForPreview _previewImage;
 
     private DisplayData display;
     private ProgressDownloadData progress;
@@ -26,11 +27,17 @@ public class GenerateObject : MonoBehaviour
 
             Configuration config = Instantiate(_prefabs, _parentTransform);
 
+            Controller controller = config.gameObject.GetComponent<Controller>();
+
+            controller.CallbackLastClick(_previewImage.OnClickForImage);
+
+            config.gameObject.name = $"Image {count}";
+
             VisualDataConfiguration(config);
 
             data.SetDisplayAndProgressData(display,progress);
             
-           string url = GetPath(count);
+            string url = GetPath(count);
 
             StartCoroutine(data.DownLoadData(url));
         }

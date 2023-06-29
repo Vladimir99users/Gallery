@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 6048030153626139390}
   - component: {fileID: 6048030153626139391}
   - component: {fileID: 2690539783062124112}
+  - component: {fileID: 2939041018131404099}
   m_Layer: 5
   m_Name: ImagePrefabs
   m_TagString: Untagged
@@ -305,3 +306,15 @@ MonoBehaviour:
   _viewDataImage: {fileID: 6048030153626139391}
   _fillAmountImage: {fileID: 1015985073}
   _textLoadData: {fileID: 1716133435}
+--- !u!114 &2939041018131404099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6048030153626139389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154fb90f483dfd24c9ea54ef4acce739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

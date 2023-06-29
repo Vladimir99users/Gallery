@@ -40,7 +40,7 @@ namespace Gallery.Menus
             _canvasGroup = GetComponent<CanvasGroup>();
         }
 
-        protected virtual void ButtonClick()
+        public virtual void LoadScene(int id)
         {
             this.Close();
         }

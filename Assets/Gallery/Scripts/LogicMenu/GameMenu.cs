@@ -8,6 +8,8 @@ namespace Gallery.Menus
     public class GameMenu : Menu
     {
         [Header("UI interface")]
+
+        // ТУТ VIEW надо убрать!
         [SerializeField] private Button _loadNewScene;
         [SerializeField] private Slider _sliderProgressBar;
         [SerializeField] private Menu _loadMenu;
@@ -23,7 +25,7 @@ namespace Gallery.Menus
            _managerScene = new ManagmentScene(_progress);
 
 
-           _loadNewScene.onClick.AddListener( ButtonClick);
+           _loadNewScene.onClick.AddListener( delegate {LoadScene(1); });
         }
 
         private void OnDisable() 
@@ -32,12 +34,12 @@ namespace Gallery.Menus
         }
 
 
-        protected override void ButtonClick()
+        public override void LoadScene(int id)
         {
-            base.ButtonClick();
+            base.LoadScene(id);
 
             _loadMenu.Open();
-            StartCoroutine(_managerScene.DownLoadData(1));
+            StartCoroutine(_managerScene.DownLoadData(id));
         }
 
 
