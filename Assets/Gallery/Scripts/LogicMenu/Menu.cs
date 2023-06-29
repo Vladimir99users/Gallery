@@ -40,5 +40,10 @@ namespace Gallery.Menus
             _canvasGroup = GetComponent<CanvasGroup>();
         }
 
+        protected virtual void ButtonClick()
+        {
+            this.Close();
+        }
+
     }
 }

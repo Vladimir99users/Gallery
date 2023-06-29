@@ -9,6 +9,7 @@ namespace Gallery.Menus
             base.Open();
             Opened?.Invoke();
         }
+
     }
 
 }

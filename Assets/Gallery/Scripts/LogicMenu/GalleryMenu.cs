@@ -1,11 +1,11 @@
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Gallery.Menus
 {
-
-    public class GameMenu : Menu
+    public class GalleryMenu : Menu
     {
         [Header("UI interface")]
         [SerializeField] private Button _loadNewScene;
@@ -35,12 +35,10 @@ namespace Gallery.Menus
         protected override void ButtonClick()
         {
             base.ButtonClick();
-
+            
             _loadMenu.Open();
-            StartCoroutine(_managerScene.DownLoadData(1));
+            StartCoroutine(_managerScene.DownLoadData(3));
         }
 
-
     }
-
 }
