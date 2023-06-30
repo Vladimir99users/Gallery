@@ -12,4 +12,6 @@ public class Configuration : MonoBehaviour
    public Image ViewDataImage {get => _viewDataImage; }
    public Image FillAmountImage {get => _fillAmountImage; }
    public TextMeshProUGUI TextLoadData {get => _textLoadData; }
+
+   public bool IsReady;
 }

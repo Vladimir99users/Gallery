@@ -17,7 +17,10 @@ public class ControllerImageClick : Controller
 
         if(selected.TryGetComponent<Configuration>(out Configuration config))
         {
-            _callback?.Invoke(config);
+            if(config.IsReady)
+            {
+                _callback?.Invoke(config);
+            }
         }
     }
 }

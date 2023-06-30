@@ -28,12 +28,14 @@ public class DownloadingDataFromServer : DownloadData
     }
     protected override void ErrorDataView(string error)
     {
+        _dataDisplay.IsReady = false;
         _downloadDataProgress.SetError(error);
         OnError?.Invoke(error);
     }
 
     protected override void SuccesDataView(Texture2D data)
     {
+        _dataDisplay.IsReady = true;
         _dataDisplay.GenerateSpriteAndSetSpriteInImage(data);
         OnSucces?.Invoke();
     }

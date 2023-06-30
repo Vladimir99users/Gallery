@@ -2,6 +2,7 @@ using UnityEngine;
 
 public abstract class DisplayData
 {
+    public bool IsReady = true;
     public DisplayData()
     {
 

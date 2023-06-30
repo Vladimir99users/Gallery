@@ -2,16 +2,17 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ViewDataForImage : DisplayData
 {
-
+    private Configuration _config;
     private Image _viewImage;
-    public ViewDataForImage(Image image)
+    public ViewDataForImage(Configuration confi)
     {
-        _viewImage = image;
+        _viewImage = confi.ViewDataImage;
+        _config = confi;
     }
     
     public override void GenerateSpriteAndSetSpriteInImage(Texture2D data)
     {
-        Debug.Log("Set Data GenerateSpriteAndSetSpriteInImage");
+        _config.IsReady = true;
         Sprite sprite = Sprite.Create(data, new Rect(0,0,data.width,data.height),new Vector2(0.5f,0.5f));
         SetDataImage(sprite);
     }

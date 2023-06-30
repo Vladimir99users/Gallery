@@ -45,7 +45,7 @@ public class GenerateObject : MonoBehaviour
 
     private void VisualDataConfiguration(Configuration conf) 
     {
-        display = new ViewDataForImage(conf.ViewDataImage);
+        display = new ViewDataForImage(conf);
         progress = new ProgressDownloadDataForFillAmount(conf.TextLoadData, conf.FillAmountImage);
     }
 
