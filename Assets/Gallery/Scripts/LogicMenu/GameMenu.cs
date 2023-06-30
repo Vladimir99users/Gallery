@@ -8,16 +8,14 @@ namespace Gallery.Menus
     public class GameMenu : Menu
     {
         [Header("UI interface")]
-
-        // ТУТ VIEW надо убрать!
         [SerializeField] private Button _loadNewSceneBtn;
-        [SerializeField] private Menu _loadMenu;
+        [SerializeField] private LoadMenu _loadMenu;
 
         [SerializeField] private int _idScene;
 
         private void Start()
         {
-           _loadNewSceneBtn.onClick.AddListener( delegate {LoadScene(_idScene); });
+           _loadNewSceneBtn.onClick.AddListener( delegate {InteractionAfterOpeningMenu(); });
         }
 
         private void OnDisable() 
@@ -26,13 +24,13 @@ namespace Gallery.Menus
         }
 
 
-        public override void LoadScene(int id)
+        public override void InteractionAfterOpeningMenu()
         {
-            base.LoadScene(id);
-            _loadMenu.SetIDNextSceneOnLoad = _idScene;
+            this.Close();
             _loadMenu.Open();
+            _loadMenu.SetIDNextSceneOnLoad = 1;
+            _loadMenu.InteractionAfterOpeningMenu();
         }
-
 
     }
 

@@ -35,7 +35,8 @@ public class SaveSelectedImageForPreview : MonoBehaviour
 
         _sprite = _lastClickForImage.ViewDataImage.sprite;
 
-        _loadMenu.LoadScene(ID_PREVIEW_SCENE);
+        _loadMenu.SetIDNextSceneOnLoad = ID_PREVIEW_SCENE;
+        _loadMenu.InteractionAfterOpeningMenu();
     }
 
 }

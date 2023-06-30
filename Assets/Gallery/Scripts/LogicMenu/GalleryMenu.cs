@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +7,7 @@ namespace Gallery.Menus
     {
         [Header("UI interface")]
         [SerializeField] private Slider _sliderProgressBar;
-        [SerializeField] private Menu _loadMenu;
+        [SerializeField] private LoadMenu _loadMenu;
 
         [SerializeField] private int _idScene;
 
@@ -22,12 +20,12 @@ namespace Gallery.Menus
             _progress = new ProgressLoadMenu(_sliderProgressBar);
            _managerScene = new ManagmentScene(_progress);
         }
-        public override void LoadScene(int id)
-        {
-            base.LoadScene(id);
-            
+        public override void InteractionAfterOpeningMenu()
+        {           
+            this.Close();
             _loadMenu.SetIDNextSceneOnLoad = _idScene;
             _loadMenu.Open();
+            _loadMenu.InteractionAfterOpeningMenu();
         }
 
     }

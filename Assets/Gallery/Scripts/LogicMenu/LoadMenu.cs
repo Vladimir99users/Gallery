@@ -17,17 +17,18 @@ namespace Gallery.Menus
             _progress = new ProgressLoadMenu(_sliderProgressBar);
            _managerScene = new ManagmentScene(_progress);
         }
-
-
-
         public override void Open()
         {
             base.Open();
             Opened?.Invoke();
+        }
+
+        public override void InteractionAfterOpeningMenu()
+        {
             LoadScene(SetIDNextSceneOnLoad);
         }
 
-        public override void LoadScene(int id)
+        private void LoadScene(int id)
         {           
             StartCoroutine(_managerScene.DownLoadData(id));
         }

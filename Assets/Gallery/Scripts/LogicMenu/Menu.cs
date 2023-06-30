@@ -42,10 +42,7 @@ namespace Gallery.Menus
             _canvasGroup = GetComponent<CanvasGroup>();
         }
 
-        public virtual void LoadScene(int id)
-        {
-            this.Close();
-        }
+        public abstract void InteractionAfterOpeningMenu();
 
     }
 }
