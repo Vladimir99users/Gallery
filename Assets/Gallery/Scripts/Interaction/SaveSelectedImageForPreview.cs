@@ -10,6 +10,9 @@ public class SaveSelectedImageForPreview : MonoBehaviour
 
     public UnityAction<Configuration> OnClickForImage;
 
+
+    private const int ID_PREVIEW_SCENE = 2;
+
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -32,7 +35,7 @@ public class SaveSelectedImageForPreview : MonoBehaviour
 
         _sprite = _lastClickForImage.ViewDataImage.sprite;
 
-        _loadMenu.LoadScene(2);
+        _loadMenu.LoadScene(ID_PREVIEW_SCENE);
     }
 
 }

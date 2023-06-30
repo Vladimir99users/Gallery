@@ -633,17 +633,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 801912511814754438, guid: 7a1035c657742a044b2b603b1fcbb4f8, type: 3}
   m_PrefabInstance: {fileID: 924647866}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &924647868 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 801912512171318145, guid: 7a1035c657742a044b2b603b1fcbb4f8, type: 3}
-  m_PrefabInstance: {fileID: 924647866}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &924647869 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 801912510985120656, guid: 7a1035c657742a044b2b603b1fcbb4f8, type: 3}
@@ -837,9 +826,9 @@ MonoBehaviour:
   Closed:
     m_PersistentCalls:
       m_Calls: []
-  _loadNewScene: {fileID: 393319882}
-  _sliderProgressBar: {fileID: 924647868}
+  _loadNewSceneBtn: {fileID: 393319882}
   _loadMenu: {fileID: 924647869}
+  _idScene: 1
 --- !u!225 &1041381172
 CanvasGroup:
   m_ObjectHideFlags: 0

@@ -830,6 +830,7 @@ MonoBehaviour:
       m_Calls: []
   _sliderProgressBar: {fileID: 1580071053}
   _loadMenu: {fileID: 1504859595}
+  _idScene: 2
 --- !u!1001 &1504859592
 PrefabInstance:
   m_ObjectHideFlags: 0

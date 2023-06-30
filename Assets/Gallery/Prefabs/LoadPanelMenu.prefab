@@ -384,6 +384,7 @@ MonoBehaviour:
   Closed:
     m_PersistentCalls:
       m_Calls: []
+  _sliderProgressBar: {fileID: 801912512171318145}
 --- !u!1 &801912512171318147
 GameObject:
   m_ObjectHideFlags: 0

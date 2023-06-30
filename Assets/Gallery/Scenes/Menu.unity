@@ -250,17 +250,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1469518315704297746, guid: ecab38cbd8ef8dc4db81313af956474b, type: 3}
   m_PrefabInstance: {fileID: 1469518315636312534}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &280235761 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 801912512171318145, guid: 7a1035c657742a044b2b603b1fcbb4f8, type: 3}
-  m_PrefabInstance: {fileID: 801912510985120654}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &321932811
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,6 +775,7 @@ GameObject:
   - component: {fileID: 1138186574}
   - component: {fileID: 1138186576}
   - component: {fileID: 1138186577}
+  - component: {fileID: 1138186578}
   m_Layer: 5
   m_Name: MenuPanel
   m_TagString: Untagged
@@ -885,9 +875,22 @@ MonoBehaviour:
   Closed:
     m_PersistentCalls:
       m_Calls: []
-  _loadNewScene: {fileID: 402776422}
-  _sliderProgressBar: {fileID: 280235761}
+  _loadNewSceneBtn: {fileID: 402776422}
   _loadMenu: {fileID: 801912510985120656}
+  _idScene: 1
+--- !u!114 &1138186578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138186572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cd526e04de50b84c8652a99767fa204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buttonExitGame: {fileID: 2656012}
 --- !u!1 &1245164903
 GameObject:
   m_ObjectHideFlags: 0

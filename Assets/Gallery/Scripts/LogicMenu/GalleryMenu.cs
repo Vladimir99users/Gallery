@@ -11,6 +11,7 @@ namespace Gallery.Menus
         [SerializeField] private Slider _sliderProgressBar;
         [SerializeField] private Menu _loadMenu;
 
+        [SerializeField] private int _idScene;
 
         private DownLoadDataManager _managerScene;
         private ProgressBar _progress;
@@ -25,8 +26,8 @@ namespace Gallery.Menus
         {
             base.LoadScene(id);
             
+            _loadMenu.SetIDNextSceneOnLoad = _idScene;
             _loadMenu.Open();
-            StartCoroutine(_managerScene.DownLoadData(id));
         }
 
     }

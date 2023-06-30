@@ -12,6 +12,8 @@ namespace Gallery.Menus
         protected bool IsOpen => _canvasGroup.interactable;
         private CanvasGroup _canvasGroup;
 
+        public int SetIDNextSceneOnLoad {get; set;}
+
         private void Awake()
         {
             OnAwake();
